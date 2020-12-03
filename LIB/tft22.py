@@ -21,7 +21,7 @@ def load_font(filename, size=20):
 
 fonts = {
     'en_font': load_font('StarseedPro.ttf'),
-    'cn_font': load_font('siyuan.ttf'),
+    # 'cn_font': load_font('siyuan.ttf'),
 }
 
 
@@ -39,7 +39,8 @@ def make_img(bg, works=None):
         for do in works:
             if do[0] == 'text':
                 if do[1].get('font') is None:
-                    do[1]['font'] = 'cn_font' if is_chinese(do[1]['text']) else 'en_font'
+                    do[1]['font'] = 'en_font'
+                    # do[1]['font'] = 'cn_font' if is_chinese(do[1]['text']) else 'en_font'
                 if do[1]['font'] in fonts.keys():
                     do[1]['font'] = fonts[do[1]['font']]
                 draw.text(**do[1])
