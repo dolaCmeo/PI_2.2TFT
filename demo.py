@@ -5,8 +5,8 @@ import atexit
 from LIB import *
 
 __author__ = 'dolacmeo'
-__project__ = ''
-__doc__ = ''
+__project__ = 'raspberryPi3B+ 2.2TFT DEMO'
+__doc__ = 'SKU_398437'
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 static_info = {
@@ -71,8 +71,8 @@ pages = [
 def main():
     count = 0
     page = 0
-    BackLight = True
-    print "STRAT!!!"
+    back_light = True
+    print("STRAT!!!")
     while True:
 
         if count == 5:
@@ -81,10 +81,10 @@ def main():
                 tft22.display(gen_img(pi_infos.device_info()))
 
         if keys.pressed(17):
-            print 'L button pressed'
+            print('L button pressed')
             page -= 1
         if keys.pressed(4):
-            print 'R button pressed'
+            print('R button pressed')
             page += 1
 
         if page < 0:
@@ -93,35 +93,35 @@ def main():
             page -= len(pages)
 
         if keys.released(17):
-            print 'L button released'
+            print('L button released')
             if page > 0:
                 tft22.display(tft22.make_img(**pages[page]))
         if keys.released(4):
-            print 'R button released'
+            print('R button released')
             if page > 0:
                 tft22.display(tft22.make_img(**pages[page]))
 
         if keys.pressed(23):
-            print 'Circle button pressed'
+            print('Circle button pressed')
         if keys.released(23):
-            print 'Circle button released'
-            BackLight = not BackLight
-            if BackLight:
+            print('Circle button released')
+            back_light = not back_light
+            if back_light:
                 keys.set_out(27)
             else:
                 keys.set_in(27)
         if keys.pressed(22):
-            print 'Square button pressed'
+            print('Square button pressed')
         if keys.released(22):
-            print 'Square button released'
+            print('Square button released')
         if keys.pressed(24):
-            print 'Trigon button pressed'
+            print('Trigon button pressed')
         if keys.released(24):
-            print 'Trigon button released'
+            print('Trigon button released')
         if keys.pressed(5):
-            print 'X button pressed'
+            print('X button pressed')
         if keys.released(5):
-            print 'X button released'
+            print('X button released')
             break
 
         count += 1
@@ -130,8 +130,8 @@ def main():
 
 @atexit.register
 def clean():
-    tft22.display(tft22.make_img(**{'bg': os.path.join(BASE_PATH, 'images', 'stopP.bmp')}))
-    print 'bye~'
+    tft22.display(tft22.make_img(**dict(bg=os.path.join(BASE_PATH, 'images', 'stopP.bmp'))))
+    print('bye~')
 
 
 if __name__ == '__main__':

@@ -2,8 +2,8 @@
 import wiringpi
 
 __author__ = 'dolacmeo'
-__project__ = ''
-__doc__ = ''
+__project__ = 'raspberryPi3B+ 2.2TFT Keys'
+__doc__ = 'SKU_398437'
 
 # L Button for GPIO17
 # R Button for GPIO4

@@ -1,4 +1,5 @@
 # 2.2TFT-LCD (SKU_398437) Driver
+![SKU_398437](https://github.com/dolaCmeo/PI_2.2TFT/raw/main/infos/CNC-IMG-8177.jpg)
 
 ## Product introduction
 
@@ -55,6 +56,7 @@ Log in Raspberry by ssh and install related python and software
     $sudo pip install python-uinput
     $sudo pip install wiringpi
     $sudo pip install Pillow
+    $sudo pip install requests
 
 #### Start!
 
@@ -82,3 +84,17 @@ Log in Raspberry by ssh and install related python and software
     + 🟥 : NONE
     + 🔺 : NONE
     + ❌ : QUIT (display "STOP")
+
+5. For DEV
+
+```
+L Button for GPIO17
+R Button for GPIO4
+Circle Button for GPIO23
+Square Button for GPIO22
+Trigon Button for GPIO24
+X Button for GPIO5
+
+BackLight for GPIO27
+IR for GPIO26
+```

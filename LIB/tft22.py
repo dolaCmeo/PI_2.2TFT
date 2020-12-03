@@ -8,11 +8,12 @@ from PIL import ImageFilter
 
 __author__ = 'dolacmeo'
 __project__ = 'raspberryPi3B+ 2.2TFT LCD'
-__doc__ = ''
+__doc__ = 'SKU_398437'
 
 TFT_LCD = r'/dev/fb1'
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 fonts_dir = os.path.join(BASE_PATH, 'fonts')
+
 
 def load_font(filename, size=20):
     return ImageFont.truetype(os.path.join(fonts_dir, filename), size)
@@ -48,11 +49,9 @@ def make_img(bg, works=None):
 
 
 def display(img):
-    # 判断方向
     w, h = img.size
     rotate = w < h
 
-    # 输出
     def write_bin(f, pixel_list):
         for pix in pixel_list:
             r = (pix[0] >> 3) & 0x1F

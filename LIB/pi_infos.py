@@ -7,8 +7,8 @@ import socket
 import requests
 
 __author__ = 'dolacmeo'
-__project__ = ''
-__doc__ = ''
+__project__ = 'raspberryPi3B+ 2.2TFT Pi-info'
+__doc__ = 'RaspberryPi'
 
 
 server_list = [
@@ -48,7 +48,7 @@ def isOnline():
         if ok:
             return requests.get("http://ip.taobao.com/outGetIpInfo?ip=myip&accessKey=alibaba-inc"
                                 ).json().get('data', {}).get('ip', 'UNKNOWN')
-    except Exception,e:
+    except Exception as e:
         pass
     return "OFFLINE!"
 
